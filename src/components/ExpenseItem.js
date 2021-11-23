@@ -1,20 +1,20 @@
 import "./ExpenseItem.css";
-function ExpenseItem()
+import ExpenseDate from "./ExpenseDate";
+import Card from "./Card";
+function ExpenseItem(props)
 {
-    const currentdate =new Date()
+    
 
     return(
-        <div className="expense-item">
-            <div>
-                {currentdate.toISOString()}
-            </div>
+        <Card className="expense-item">
+           <ExpenseDate date={props.date} />
             <div className="expense-item__description">
-                <h2>Groceries</h2> 
+                <h2>{props.title}</h2> 
             </div>
             <div className="expense-item__price">
-                Amount
+                {props.amount}
             </div>
-        </div>
+        </Card>
     )
 }
 
